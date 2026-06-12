@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prognoza vremena</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet/dist/leaflet.css"
+    />
+</head>
+<body>
+
+<div class="container">
+
+    <div class="weather-card">
+
+        <h1>🌤 Prognoza vremena</h1>
+
+        <p class="subtitle">
+            Pretraži vremensku prognozu za bilo koji grad
+        </p>
+
+        <div id="loader"></div>
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="city"
+                placeholder="Unesite grad..."
+                autocomplete="off"
+            >
+
+            <button id="searchBtn">
+                Prikaži
+            </button>
+
+        </div>
+
+        <div id="suggestions"></div>
+
+        <div class="weather-box">
+
+            <img id="countryFlag" alt="Zastava">
+
+            <h2 id="cityName">
+                Odaberite grad
+            </h2>
+
+            <div id="weatherIcon">🌤️</div>
+
+            <h1 id="temperature">--</h1>
+
+            <p id="description">--</p>
+
+            <p id="humidity">Vlaga: --</p>
+
+            <p id="feelsLike">Osjećaj temperature: --</p>
+
+            <p id="windSpeed">Vjetar: --</p>
+
+        </div>
+
+        <div id="forecast"></div>
+
+    </div>
+
+    <div class="map-card">
+
+        <div class="map-controls">
+
+    <div class="desktop-layers">
+
+        <button class="layer-btn active" data-layer="rain">
+            🌧 Oborine
+        </button>
+
+        <button class="layer-btn" data-layer="clouds">
+            ☁ Oblaci
+        </button>
+
+        <button class="layer-btn" data-layer="temp">
+            🌡 Temperatura
+        </button>
+
+        <button class="layer-btn" data-layer="wind">
+            💨 Vjetar
+        </button>
+
+        <button class="layer-btn" data-layer="pressure">
+            🌀 Tlak
+        </button>
+
+    </div>
+
+    <select id="mobileLayerSelect">
+
+        <option value="rain">
+            🌧 Oborine
+        </option>
+
+        <option value="clouds">
+            ☁ Oblaci
+        </option>
+
+        <option value="temp">
+            🌡 Temperatura
+        </option>
+
+        <option value="wind">
+            💨 Vjetar
+        </option>
+
+        <option value="pressure">
+            🌀 Tlak
+        </option>
+
+    </select>
+
+</div>
+
+        <div id="map"></div>
+
+    </div>
+
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
